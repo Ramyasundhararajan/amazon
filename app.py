@@ -57,10 +57,10 @@ def predict_sentiment(input_text, model, tokenizer):
     return sentiment
 
 # Route for predicting sentiment from typed text
-@app.route('/predict_text', methods=['POST'])
+@app.route('/predict_text', method=['POST'])
 def predict_text():
     if request.method == 'POST':
-        input_text = request.form.get('input_text', '')  # should match the name attribute in the HTML form
+        input_text = request.form('input_text', '')  # should match the name attribute in the HTML form
 
         if not input_text:
             return "Input text is empty."
